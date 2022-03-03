@@ -1,4 +1,4 @@
-# dumpling
+# 🥟dumpling
 
 This is a rust crate for dumping variables for debugging.
 
