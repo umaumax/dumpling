@@ -2,9 +2,19 @@
 
 This is a rust crate for dumping variables for debugging.
 
-## how to install
-``` bash
-cargo install --git https://github.com/umaumax/dumpling
+## how to add
+``` toml
+[dependencies]
+dumpling = { git = "https://github.com/umaumax/dumpling.git" }
+```
+
+or
+
+`git clone https://github.com/umaumax/dumpling`
+
+``` toml
+[dependencies]
+path = "./dumpling"
 ```
 
 ## how to use
