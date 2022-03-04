@@ -21,6 +21,34 @@ macro_rules! dump_HEX {
 #[macro_export]
 macro_rules! dump_iter_hex {
     ($x:expr) => {
+        format!(
+            "[{}]",
+            $x.iter()
+                .map(|n| format!("{}, ", dump_hex!(n)))
+                .collect::<String>()
+                .strip_suffix(", ")
+                .unwrap()
+        )
+    };
+}
+
+#[macro_export]
+macro_rules! dump_iter_HEX {
+    ($x:expr) => {
+        format!(
+            "[{}]",
+            $x.iter()
+                .map(|n| format!("{}, ", dump_HEX!(n)))
+                .collect::<String>()
+                .strip_suffix(", ")
+                .unwrap()
+        )
+    };
+}
+
+#[macro_export]
+macro_rules! dump_binary_hex {
+    ($x:expr) => {
         $x.iter()
             .enumerate()
             .map(|(i, n)| format!("{:02x}{}", n, if i % 8 == 7 { " " } else { "" }))
@@ -29,7 +57,7 @@ macro_rules! dump_iter_hex {
 }
 
 #[macro_export]
-macro_rules! dump_iter_HEX {
+macro_rules! dump_binary_HEX {
     ($x:expr) => {
         $x.iter()
             .enumerate()
