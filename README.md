@@ -14,7 +14,7 @@ or
 
 ``` toml
 [dependencies]
-dumpling { path = "./dumpling" }
+dumpling = { path = "./dumpling" }
 ```
 
 ## how to use
